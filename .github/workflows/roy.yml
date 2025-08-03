@@ -35,7 +35,7 @@ jobs:
 
       - name: Print the MY_VAR variable
         run: |
-          echo "The env variable MY_VAR is: ${{ variables.MY_VAR }}"
+          echo "The env variable MY_VAR is: $MY_VAR"
       - name: Print The Env Variable Data
         run: |
           echo "The env variable ROY is: $ROY"
