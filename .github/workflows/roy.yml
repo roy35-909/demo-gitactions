@@ -4,16 +4,16 @@ name: Print Txt file
 
 on:
   workflow_dispatch:
-  inputs:
-    example_input:
-      description: 'Chose your Server'
-      required: true
-      type: choice
-      default: 'staging'
+    inputs:
+      example_input:
+        description: 'Chose your Server'
+        required: true
+        type: choice
+        default: 'staging'
 
-      options:
-        - staging
-        - production
+        options:
+          - staging
+          - production
 
 
 
