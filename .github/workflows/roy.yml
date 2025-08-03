@@ -1,22 +1,23 @@
 name: Print Txt file
 
+
+
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
- 
+  workflow_dispatch:
+
+
+
 jobs:
-  read_the_file:
-    runs-on: self-hosted
+  print_txt_file:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Git Checkout Korta hba
+      - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Read the Txt file 
+
+      - name: Print contents of txt file
         run: |
-          pm2 status
+          cat roy.txt
            
       
  
