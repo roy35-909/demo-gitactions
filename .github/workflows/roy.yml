@@ -15,15 +15,27 @@ on:
           - staging
           - production
 
+env:
+  ROY: "Hello World !"
 
 
 jobs:
   print_txt_file:
     runs-on: ubuntu-latest
 
+    env:
+      ROY_ENV: ${{ secrets.ROY_ENV }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Print The ROY_ENV Variable
+        run: |
+          echo "The env variable ROY_ENV is: $ROY_ENV"
+
+      - name: Print The Env Variable Data
+        run: |
+          echo "The env variable ROY is: $ROY"
 
       - name: Print User inputs
         run: |
