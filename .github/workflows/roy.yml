@@ -28,6 +28,17 @@ jobs:
       - name: Print User inputs
         run: |
           echo "User input: '${{ github.event.inputs.example_input }}'"
+    
+      - name: Check The user input
+        run: |
+          if [ "${{ github.event.inputs.example_input }}" = "staging" ]; then
+            echo "You chose staging server"
+          elif [ "${{ github.event.inputs.example_input }}" = "production" ]; then
+            echo "You chose production server"
+          else
+            echo "Invalid input"
+            exit 1
+          fi
 
 
       - name: Print contents of txt file
